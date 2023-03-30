@@ -53,14 +53,14 @@ export const startAuthentication = createAsyncThunk('medTechApi/startAuthenticat
     const anonymousApi = await new AnonymousMedTechApiBuilder()
         .withCrypto(crypto)
         .withICureBaseUrl('https://kraken.icure.cloud/rest/v2')
-        .withMsgGwSpecId(Constants.REACT_APP_MSG_GW_SPEC_ID)
-        .withAuthProcessByEmailId(Constants.REACT_APP_AUTH_PROCESS_BY_EMAIL_ID)
-        .withAuthProcessBySmsId(Constants.REACT_APP_AUTH_PROCESS_BY_SMS_ID)
+        .withMsgGwSpecId(Constants.MSG_GW_SPEC_ID)
+        .withAuthProcessByEmailId(Constants.EMAIL_AUTHENTICATION_PROCESS_ID)
+        .withAuthProcessBySmsId(Constants.SMS_AUTHENTICATION_PROCESS_ID)
         .withStorage(storage)
         .preventCookieUsage()
         .build();
 
-    const authProcess = await anonymousApi.authenticationApi.startAuthentication(Constants.REACT_APP_RECAPTCHA, email, undefined, firstName, lastName, Constants.REACT_APP_PETRA_HCP);
+    const authProcess = await anonymousApi.authenticationApi.startAuthentication(Constants.RECAPTCHA_TOKEN, email, undefined, firstName, lastName, Constants.REACT_APP_PETRA_HCP);
     console.info(`authProcess.requestId: ${authProcess.requestId} - authProcess.login: ${authProcess.login}`);
 
     apiCache[`${authProcess.login}/${authProcess.requestId}`] = anonymousApi;

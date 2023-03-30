@@ -1,18 +1,4 @@
-/**
- * Metro configuration for React Native
- * https://github.com/facebook/react-native
- *
- * @format
- */
+// Learn more https://docs.expo.io/guides/customizing-metro
+import { getDefaultConfig } from 'expo/metro-config';
 
-module.exports = {
-    transformer: {
-        getTransformOptions: async () => ({
-            transform: {
-                experimentalImportSupport: false,
-                inlineRequires: true,
-            },
-            sourceExts: ['js', 'jsx', 'ts', 'tsx'],
-        }),
-    },
-};
+export default getDefaultConfig(__dirname);

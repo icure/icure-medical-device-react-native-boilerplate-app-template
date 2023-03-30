@@ -1,4 +1,11 @@
 {
-  "name": "Petra",
-  "displayName": "Petra"
+  "expo": {
+    "name": "icure-react-native-template",
+    "slug": "icure-react-native-template",
+    "version": "0.0.1",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  }
 }
