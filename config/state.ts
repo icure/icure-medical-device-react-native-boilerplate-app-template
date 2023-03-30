@@ -1,12 +1,11 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 import storage from '../utils/storage';
-import { Constants } from './constants';
 
 // Configuration object for data persistence with Redux Persist
 export const persistConfig = {
-  key: Constants.REACT_APP_NAME,
+  key: 'icure',
   storage: storage,
-  whitelist: [Constants.REACT_APP_NAME],
+  whitelist: ['icure'],
 };
 
 export interface State {
