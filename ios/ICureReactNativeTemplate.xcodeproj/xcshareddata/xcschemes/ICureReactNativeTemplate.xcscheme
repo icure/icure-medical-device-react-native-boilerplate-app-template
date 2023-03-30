@@ -15,9 +15,23 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "Petra.app"
-               BlueprintName = "Petra"
-               ReferencedContainer = "container:Petra.xcodeproj">
+               BuildableName = "ICureReactNativeTemplate.app"
+               BlueprintName = "ICureReactNativeTemplate"
+               ReferencedContainer = "container:ICureReactNativeTemplate.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "00E356ED1AD99517003FC87E"
+               BuildableName = "ICureReactNativeTemplateTests.xctest"
+               BlueprintName = "ICureReactNativeTemplateTests"
+               ReferencedContainer = "container:ICureReactNativeTemplate.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,16 +42,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "PetraTests.xctest"
-               BlueprintName = "PetraTests"
-               ReferencedContainer = "container:Petra.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -50,16 +54,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "Petra.app"
-            BlueprintName = "Petra"
-            ReferencedContainer = "container:Petra.xcodeproj">
+            BuildableName = "ICureReactNativeTemplate.app"
+            BlueprintName = "ICureReactNativeTemplate"
+            ReferencedContainer = "container:ICureReactNativeTemplate.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -67,16 +70,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "Petra.app"
-            BlueprintName = "Petra"
-            ReferencedContainer = "container:Petra.xcodeproj">
+            BuildableName = "ICureReactNativeTemplate.app"
+            BlueprintName = "ICureReactNativeTemplate"
+            ReferencedContainer = "container:ICureReactNativeTemplate.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

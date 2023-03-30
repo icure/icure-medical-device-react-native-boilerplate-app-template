@@ -72,3 +72,5 @@ buck-out/
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+.vscode/launch.json
+package-lock.json
