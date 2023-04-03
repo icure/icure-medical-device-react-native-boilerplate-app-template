@@ -4,10 +4,12 @@ import {useForm, Controller} from 'react-hook-form';
 import {useNavigate} from 'react-router-native';
 
 import {RoundedInput, RoundedButton, TextHelper, ErrorMessage} from '../components/FormElements';
-import {routes} from '../navigation/Router';
+import { routes } from '../navigation/routes';
 
 import { useAppSelector, useAppDispatch } from '../redux/hooks';
-import { setToken, login, setEmail, completeAuthentication, startAuthentication } from '../services/api';
+import { setToken, login, setEmail, completeAuthentication, startAuthentication, setCaptcha } from '../services/api';
+import { Constants } from '../config/constants';
+import { FriendlyCaptchaComponent } from '../components/FriendlyCaptcha';
 
 
 export const Login = () => {
@@ -24,8 +26,8 @@ export const Login = () => {
   });
   const {online, lsUsername, lsToken} = useAppSelector(state => ({
     ...state.medTechApi,
-    lsUsername: state.petra?.savedCredentials?.login,
-    lsToken: state.petra?.savedCredentials?.token,
+    lsUsername: state.icure?.savedCredentials?.login,
+    lsToken: state.icure?.savedCredentials?.token,
   }));
 
   const navigate = useNavigate();
@@ -71,6 +73,11 @@ export const Login = () => {
             name="userEmail"
           />
           {errors.userEmail && <ErrorMessage text="This field is required." />}
+          
+          <View style={styles.webviewContainer}>
+            <FriendlyCaptchaComponent sitekey={Constants.FRIENDLY_CAPTCHA_SITE_KEY} onFinish={value => dispatch(setCaptcha({captcha: value}))} />
+          </View>
+
           {isWaitingForCode ? (
             <>
               <Controller
@@ -124,5 +131,9 @@ const styles = StyleSheet.create({
   },
   textHelperContainer: {
     marginTop: 24,
+  },
+  webviewContainer: {
+    width: '100%',
+    marginBottom: 24,
   },
 });

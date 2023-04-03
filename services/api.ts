@@ -22,6 +22,7 @@ export interface MedTechApiState {
     lastName?: string;
     dateOfBirth?: number;
     mobilePhone?: string;
+    captcha?: string;
 }
 
 const initialState: MedTechApiState = {
@@ -37,13 +38,14 @@ const initialState: MedTechApiState = {
     lastName: undefined,
     dateOfBirth: undefined,
     mobilePhone: undefined,
+    captcha: undefined,
 };
 
 const apiCache: { [key: string]: MedTechApi | AnonymousMedTechApi } = {};
 
 export const startAuthentication = createAsyncThunk('medTechApi/startAuthentication', async (_payload, { getState }) => {    
     const {
-        medTechApi: { email, firstName, lastName },
+        medTechApi: { email, firstName, lastName, captcha },
     } = getState() as { medTechApi: MedTechApiState };
 
     if (!email) {
@@ -52,7 +54,6 @@ export const startAuthentication = createAsyncThunk('medTechApi/startAuthenticat
 
     const anonymousApi = await new AnonymousMedTechApiBuilder()
         .withCrypto(crypto)
-        .withICureBaseUrl('https://kraken.icure.cloud/rest/v2')
         .withMsgGwSpecId(Constants.MSG_GW_SPEC_ID)
         .withAuthProcessByEmailId(Constants.EMAIL_AUTHENTICATION_PROCESS_ID)
         .withAuthProcessBySmsId(Constants.SMS_AUTHENTICATION_PROCESS_ID)
@@ -60,8 +61,8 @@ export const startAuthentication = createAsyncThunk('medTechApi/startAuthenticat
         .preventCookieUsage()
         .build();
 
-    const authProcess = await anonymousApi.authenticationApi.startAuthentication(Constants.RECAPTCHA_TOKEN, email, undefined, firstName, lastName, Constants.REACT_APP_PETRA_HCP);
-    console.info(`authProcess.requestId: ${authProcess.requestId} - authProcess.login: ${authProcess.login}`);
+    const captchaType = 'friendly-captcha';
+    const authProcess = await anonymousApi.authenticationApi.startAuthentication(captcha, email, undefined, firstName, lastName, Constants.SUPER_USER_ID, undefined, undefined, captchaType);
 
     apiCache[`${authProcess.login}/${authProcess.requestId}`] = anonymousApi;
 
@@ -113,7 +114,6 @@ export const login = createAsyncThunk('medTechApi/login', async (_, {getState}) 
     }
   
     const api = await new MedTechApiBuilder()
-      .withICureBaseUrl('https://kraken.icure.cloud/rest/v2')
       .withCrypto(crypto)
       .withStorage(storage)
       .preventCookieUsage()
@@ -144,6 +144,9 @@ export const api = createSlice({
         setEmail: (state, {payload: {email}}: PayloadAction<{email: string}>) => {
             state.email = email;
             state.invalidEmail = false;
+        },
+        setCaptcha: (state, {payload: {captcha}}: PayloadAction<{captcha: string}>) => {
+            state.captcha = captcha;
         },
     },
     extraReducers: builder => {
@@ -227,4 +230,4 @@ export const medTechApi = async (getState: () => unknown) => {
     return await getApiFromState(() => state);
 };
 
-export const { setRegistrationInformation, setToken, setEmail } = api.actions;
+export const { setRegistrationInformation, setToken, setEmail, setCaptcha } = api.actions;
