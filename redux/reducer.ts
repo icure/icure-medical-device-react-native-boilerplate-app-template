@@ -4,7 +4,7 @@ import {persistReducer} from 'redux-persist';
 import { api } from '../services/api';
 
 export const appReducer = combineReducers({
-    petra: app.reducer,
+    icure: app.reducer,
     medTechApi: api.reducer,
 });
 
