@@ -62,7 +62,7 @@ export const startAuthentication = createAsyncThunk('medTechApi/startAuthenticat
         .build();
 
     const captchaType = 'friendly-captcha';
-    const authProcess = await anonymousApi.authenticationApi.startAuthentication(captcha, email, undefined, firstName, lastName, Constants.SUPER_USER_ID, undefined, undefined, captchaType);
+    const authProcess = await anonymousApi.authenticationApi.startAuthentication(captcha, email, undefined, firstName, lastName, Constants.PARENT_HEALTHCARE_PROFESSIONAL_ID, undefined, undefined, captchaType);
 
     apiCache[`${authProcess.login}/${authProcess.requestId}`] = anonymousApi;
 

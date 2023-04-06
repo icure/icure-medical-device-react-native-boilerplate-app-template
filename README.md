@@ -15,7 +15,7 @@ Once your app is created, complete the following values of the file `config/cons
 - your **EMAIL_AUTHENTICATION_PROCESS_ID**,
 - your **SMS_AUTHENTICATION_PROCESS_ID**,
 - your **FRIENDLY_CAPTCHA_SITE_KEY**,
-- your **SUPER_USER_ID**
+- your **PARENT_HEALTHCARE_PROFESSIONAL_ID**
 
 These information can be found in the [Cockpit Web Portal](https://cockpit.icure.cloud/), once you created your account. 
 
