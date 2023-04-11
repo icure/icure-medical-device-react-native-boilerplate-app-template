@@ -11,15 +11,14 @@ npx create-react-native-app --template https://github.com/icure/icure-medical-de
 ```
 
 Once your app is created, complete the following values of the file `config/constants.ts`: 
-- your **MSG_GW_SPEC_ID**,
-- your **EMAIL_AUTHENTICATION_PROCESS_ID**,
-- your **SMS_AUTHENTICATION_PROCESS_ID**,
-- your **FRIENDLY_CAPTCHA_SITE_KEY**,
-- your **PARENT_HEALTHCARE_PROFESSIONAL_ID**
+- **MSG_GW_SPEC_ID**,
+- **EMAIL_AUTHENTICATION_PROCESS_ID** and/or **SMS_AUTHENTICATION_PROCESS_ID**,
+- **FRIENDLY_CAPTCHA_SITE_KEY**,
+- **PARENT_HEALTHCARE_PROFESSIONAL_ID** (Optional)
 
-These information can be found in the [Cockpit Web Portal](https://cockpit.icure.cloud/), once you created your account. 
+Check out our [Quick Start](https://docs.icure.com/sdks/quick-start/) in order to know what are those information and how to get them from our [Cockpit Portal](https://cockpit.icure.cloud/).
 
-*WARNING: Be sure to complete these information otherwise, you won't be able to complete an authentication*
+*WARNING: Without these information, you won't be able to complete an authentication*
 
 Not familiar with `npx create-react-native-app` ? Have a look to their [repository](https://github.com/expo/create-react-native-app).
 
@@ -46,12 +45,12 @@ This React Native Template is based on the same technologies as our [Petra examp
 We chosed this set of technologies, because we consider them as the most efficient ones to work with. 
 Nonetheless, you can of course work with the technologies of your choices and still integrate the iCure MedTech Typescript SDK in your React Native app.
 
-## What is included in this template ? 
+## What includes this template ? 
 All the needed dependencies to work with iCure in a React Native app, including:
 - the [iCure MedTech Typescript SDK](https://github.com/icure/icure-medical-device-js-sdk) 
 - the [iCure React Native Cryptography](https://github.com/icure/icure-react-native-cryptography) libraries
 
 This template also includes the implementation of the [iCure authentication flow](https://docs.icure.com/sdks/how-to/how-to-authenticate-a-user/how-to-authenticate-a-user) (Both registration and login).  
 
-## Where to head next ? 
-Check out our [MedTech Documentation](https://docs.icure.com/sdks/intro) and more particularly our [How To's](https://docs.icure.com/sdks/how-to/index), in order to start implementing new functionalities inside your React Native App ! 
+## What's next next ? 
+Check out our [MedTech Documentation](https://docs.icure.com/sdks/quick-start/react-native-quick-start) and more particularly our [How To's](https://docs.icure.com/sdks/how-to/index), in order to start implementing new functionalities inside your React Native App ! 
