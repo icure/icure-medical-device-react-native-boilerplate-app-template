@@ -11,10 +11,10 @@ npx create-react-native-app --template https://github.com/icure/icure-medical-de
 ```
 
 Once your app is created, complete the following values of the file `config/constants.ts`: 
-- **MSG_GW_SPEC_ID**,
+- **EXTERNAL_SERVICES_SPEC_ID**,
 - **EMAIL_AUTHENTICATION_PROCESS_ID** and/or **SMS_AUTHENTICATION_PROCESS_ID**,
-- **FRIENDLY_CAPTCHA_SITE_KEY**,
-- **PARENT_HEALTHCARE_PROFESSIONAL_ID** (Optional)
+- **PARENT_ORGANISATION_ID**,
+- **FRIENDLY_CAPTCHA_SITE_KEY**
 
 Check out our [Quick Start](https://docs.icure.com/sdks/quick-start/) in order to know what are those information and how to get them from our [Cockpit Portal](https://cockpit.icure.cloud/).
 
@@ -52,5 +52,5 @@ All the needed dependencies to work with iCure in a React Native app, including:
 
 This template also includes the implementation of the [iCure authentication flow](https://docs.icure.com/sdks/how-to/how-to-authenticate-a-user/how-to-authenticate-a-user) (Both registration and login).  
 
-## What's next next ? 
+## What's next ? 
 Check out our [MedTech Documentation](https://docs.icure.com/sdks/quick-start/react-native-quick-start) and more particularly our [How To's](https://docs.icure.com/sdks/how-to/index), in order to start implementing new functionalities inside your React Native App ! 
