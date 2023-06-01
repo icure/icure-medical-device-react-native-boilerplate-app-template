@@ -54,7 +54,7 @@ export const startAuthentication = createAsyncThunk('medTechApi/startAuthenticat
 
     const anonymousApi = await new AnonymousMedTechApiBuilder()
         .withCrypto(crypto)
-        .withMsgGwSpecId(Constants.MSG_GW_SPEC_ID)
+        .withMsgGwSpecId(Constants.EXTERNAL_SERVICES_SPEC_ID)
         .withAuthProcessByEmailId(Constants.EMAIL_AUTHENTICATION_PROCESS_ID)
         .withAuthProcessBySmsId(Constants.SMS_AUTHENTICATION_PROCESS_ID)
         .withStorage(storage)
@@ -62,7 +62,7 @@ export const startAuthentication = createAsyncThunk('medTechApi/startAuthenticat
         .build();
 
     const captchaType = 'friendly-captcha';
-    const authProcess = await anonymousApi.authenticationApi.startAuthentication(captcha, email, undefined, firstName, lastName, Constants.PARENT_HEALTHCARE_PROFESSIONAL_ID, undefined, undefined, captchaType);
+    const authProcess = await anonymousApi.authenticationApi.startAuthentication(captcha, email, undefined, firstName, lastName, Constants.PARENT_ORGANISATION_ID, undefined, undefined, captchaType);
 
     apiCache[`${authProcess.login}/${authProcess.requestId}`] = anonymousApi;
 
@@ -116,6 +116,9 @@ export const login = createAsyncThunk('medTechApi/login', async (_, {getState}) 
     const api = await new MedTechApiBuilder()
       .withCrypto(crypto)
       .withStorage(storage)
+      .withMsgGwSpecId(Constants.EXTERNAL_SERVICES_SPEC_ID)
+      .withAuthProcessByEmailId(Constants.EMAIL_AUTHENTICATION_PROCESS_ID)
+      .withAuthProcessBySmsId(Constants.SMS_AUTHENTICATION_PROCESS_ID)
       .preventCookieUsage()
       .withUserName(email)
       .withPassword(token)

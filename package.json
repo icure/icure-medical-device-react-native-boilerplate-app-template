@@ -8,7 +8,7 @@
     "expo": "~48.0.9",
     "expo-splash-screen": "~0.18.1",
     "expo-status-bar": "~1.4.4",
-    "@icure/medical-device-sdk": "^2.2.2",
+    "@icure/medical-device-sdk": "^2.2.4",
     "@icure/icure-react-native-crypto": "^1.0.8",
     "@icure/react-native-aes-crypto": "^2.2.11",
     "@icure/react-native-rsa-native": "^2.1.11",
