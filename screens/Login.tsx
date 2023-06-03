@@ -4,7 +4,7 @@ import {useForm, Controller} from 'react-hook-form';
 import {useNavigate} from 'react-router-native';
 
 import {RoundedInput, RoundedButton, TextHelper, ErrorMessage} from '../components/FormElements';
-import { routes } from '../navigation/routes';
+import { routes } from '../navigation/Router';
 
 import { useAppSelector, useAppDispatch } from '../redux/hooks';
 import { setToken, login, setEmail, completeAuthentication, startAuthentication, setCaptcha } from '../services/api';
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
   registerScreen: {
     flex: 1,
     height: '100%',
-    paddingTop: 40,
+    paddingTop: 20,
     backgroundColor: '#FFFDFE',
   },
   heading: {
@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
     color: '#151B5D',
     textAlign: 'center',
     marginBottom: 32,
-    marginTop: 24
+    marginTop: 12
   },
   contentHolder: {
     alignItems: 'center',
@@ -130,7 +130,7 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   textHelperContainer: {
-    marginTop: 24,
+    marginTop: 0,
   },
   webviewContainer: {
     width: '100%',

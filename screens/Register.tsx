@@ -4,7 +4,7 @@ import {useForm, Controller} from 'react-hook-form';
 
 import {RoundedInput, RoundedButton, TextHelper, ErrorMessage} from '../components/FormElements';
 import {useNavigate} from 'react-router-native';
-import { routes } from '../navigation/routes';
+import { routes } from '../navigation/Router';
 
 import { useAppDispatch, useAppSelector } from '../redux/hooks';
 import {completeAuthentication, setCaptcha, setRegistrationInformation, setToken, startAuthentication} from '../services/api';
@@ -59,7 +59,6 @@ export const Register = (): JSX.Element => {
     <ScrollView style={styles.registerScreen}>
       <View style={styles.contentHolder}>
         <Image style={styles.logo} source={require('../assets/images/logo.png')} />
-        <Text style={styles.heading}>Registration</Text>
         <View style={styles.inputsContainer}>
           <Controller
             control={control}
@@ -126,15 +125,8 @@ const styles = StyleSheet.create({
   registerScreen: {
     flex: 1,
     height: '100%',
-    paddingTop: 40,
+    paddingTop: 36,
     backgroundColor: '#FFFDFE',
-  },
-  heading: {
-    fontSize: 24,
-    color: '#151B5D',
-    textAlign: 'center',
-    marginBottom: 32,
-    marginTop: 24
   },
   contentHolder: {
     alignItems: 'center',
@@ -142,6 +134,8 @@ const styles = StyleSheet.create({
   },
   logo: {
     width: 201,
+    height: 80,
+    marginBottom: 60,
     resizeMode: 'contain',
   },
   inputsContainer: {
