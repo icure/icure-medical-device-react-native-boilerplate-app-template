@@ -4,12 +4,8 @@ import {Layout} from '../components/layout/Layout';
 import {Register} from '../screens/Register';
 import {Login} from '../screens/Login';
 import {Home} from '../screens/Home';
+import {routes} from "./routes";
 
-export const routes = {
-  home: '/home',
-  login: '/',
-  register: '/register',
-};
 
 export const Router = () => (
   <NativeRouter>

@@ -4,7 +4,7 @@ import {useForm, Controller} from 'react-hook-form';
 import {useNavigate} from 'react-router-native';
 
 import {RoundedInput, RoundedButton, TextHelper, ErrorMessage} from '../components/FormElements';
-import { routes } from '../navigation/Router';
+import { routes } from '../navigation/routes';
 
 import { useAppSelector, useAppDispatch } from '../redux/hooks';
 import { setToken, login, setEmail, completeAuthentication, startAuthentication, setCaptcha } from '../services/api';
